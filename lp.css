@@ -1,0 +1,307 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    height: 100vh;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Starry Background */
+  @keyframes moveStars {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .stars, .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: transparent;
+  }
+  
+  .stars {
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    animation: moveStars 100s linear infinite;
+  }
+  
+  .twinkling {
+    background: transparent;
+    animation: twinkle 5s ease-in-out infinite;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  /* Animated Planet */
+  .planet {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #ff7e5f, #feb47b);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 126, 95, 0.8);
+    animation: floatPlanet 10s ease-in-out infinite;
+    z-index: 10; /* Ensure planet stays below the dark mode toggle */
+  }
+  
+  @keyframes floatPlanet {
+    0%, 100% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+    }
+  }
+  
+  /* Floating Asteroid */
+  .asteroid {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    background: url('https://www.transparenttextures.com/patterns/asteroid.png') repeat;
+    border-radius: 50%;
+    animation: floatAsteroid 8s ease-in-out infinite;
+    z-index: 10; /* Ensure asteroid stays below the dark mode toggle */
+  }
+  
+  @keyframes floatAsteroid {
+    0%, 100% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-30px) rotate(360deg);
+    }
+  }
+  
+  /* Container and Content */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 1.5s ease-in-out;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: glow 2s infinite alternate;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #a0a0a0;
+  }
+  
+  /* Feature Section Styling */
+  .feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 1.5s ease-in-out;
+  }
+  
+  .feature h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .feature p {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+  }
+  
+  .feature button {
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .feature button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+  }
+  
+  /* Dark Mode Toggle Container */
+  .dark-mode-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000; /* Increased z-index to ensure it stays on top */
+  }
+  
+  #dark-mode-toggle {
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #dark-mode-toggle:hover {
+    background: linear-gradient(135deg, #555, #777);
+    transform: translateY(-2px);
+  }
+  
+  /* Signature */
+  .signature {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #a0a0a0;
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  .signature span {
+    color: #00d2ff;
+    font-weight: bold;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 30px #00d2ff;
+    }
+    100% {
+      text-shadow: 0 0 20px #00d2ff, 0 0 30px #00d2ff, 0 0 40px #00d2ff;
+    }
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background: radial-gradient(ellipse at bottom, #0f0c29, #302b63);
+  }
+  
+  body.dark-mode .content {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  body.dark-mode button {
+    background: linear-gradient(135deg, #555, #777);
+  }
+  
+  body.dark-mode button:hover {
+    background: linear-gradient(135deg, #777, #999);
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    .content {
+      padding: 20px;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 12px 20px;
+    }
+  }

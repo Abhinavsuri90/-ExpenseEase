@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="currency.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <h1>🌌 Currency Converter 🚀</h1>
+    <div class="converter">
+      <input type="number" id="amount" placeholder="Enter amount" />
+      <div class="currency-selector">
+        <select id="fromCurrency">
+          <option value="USD" data-logo="🇺🇸" data-name="United States Dollar">🇺🇸 USD</option>
+          <option value="EUR" data-logo="🇪🇺" data-name="Euro">🇪🇺 EUR</option>
+          <option value="GBP" data-logo="🇬🇧" data-name="British Pound">🇬🇧 GBP</option>
+          <option value="JPY" data-logo="🇯🇵" data-name="Japanese Yen">🇯🇵 JPY</option>
+          <option value="INR" data-logo="🇮🇳" data-name="Indian Rupee">🇮🇳 INR</option>
+          <option value="AUD" data-logo="🇦🇺" data-name="Australian Dollar">🇦🇺 AUD</option>
+          <option value="CAD" data-logo="🇨🇦" data-name="Canadian Dollar">🇨🇦 CAD</option>
+          <option value="CHF" data-logo="🇨🇭" data-name="Swiss Franc">🇨🇭 CHF</option>
+          <option value="CNY" data-logo="🇨🇳" data-name="Chinese Yuan">🇨🇳 CNY</option>
+        </select>
+        <span>to</span>
+        <select id="toCurrency">
+          <option value="EUR" data-logo="🇪🇺" data-name="Euro">🇪🇺 EUR</option>
+          <option value="USD" data-logo="🇺🇸" data-name="United States Dollar">🇺🇸 USD</option>
+          <option value="GBP" data-logo="🇬🇧" data-name="British Pound">🇬🇧 GBP</option>
+          <option value="JPY" data-logo="🇯🇵" data-name="Japanese Yen">🇯🇵 JPY</option>
+          <option value="INR" data-logo="🇮🇳" data-name="Indian Rupee">🇮🇳 INR</option>
+          <option value="AUD" data-logo="🇦🇺" data-name="Australian Dollar">🇦🇺 AUD</option>
+          <option value="CAD" data-logo="🇨🇦" data-name="Canadian Dollar">🇨🇦 CAD</option>
+          <option value="CHF" data-logo="🇨🇭" data-name="Swiss Franc">🇨🇭 CHF</option>
+          <option value="CNY" data-logo="🇨🇳" data-name="Chinese Yuan">🇨🇳 CNY</option>
+        </select>
+      </div>
+      <button id="convertBtn">Convert</button>
+    </div>
+    <div class="result">
+      <h2 id="resultText">Result will appear here</h2>
+    </div>
+    <button id="historyBtn">View History</button>
+    <div class="history" id="historySection">
+      <h3>🕰️ Conversion History</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+  <div class="planet"></div>
+  <script src="currency.js"></script>
+</body>
+</html>

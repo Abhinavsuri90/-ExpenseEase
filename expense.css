@@ -1,0 +1,288 @@
+/* Space-themed styles */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: auto; /* Enable scrolling */
+  position: relative;
+}
+
+.stars, .twinkling {
+  position: fixed; /* Fixed background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.stars {
+  background: #000 url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  animation: stars 60s linear infinite;
+}
+
+.twinkling {
+  background: transparent url('https://www.transparenttextures.com/patterns/starfield.png') repeat;
+  animation: twinkling 10s linear infinite;
+}
+
+@keyframes stars {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
+@keyframes twinkling {
+  from { background-position: 0 0; }
+  to { background-position: 100% 100%; }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh; /* Ensure container takes full height */
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Left Side: Spending Chart */
+.chart-container {
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.chart-container h2 {
+  font-size: 2rem;
+  color: #FFD700; /* Gold */
+  text-shadow: 0 0 10px #FFD700;
+}
+
+/* Right Side: Content Container */
+.content-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto; /* Enable scrolling */
+}
+
+/* Big Attractive Heading */
+.title-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title-container h1 {
+  font-size: 4rem; /* Bigger heading */
+  color: #FFD700; /* Gold */
+  text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; /* Glow effect */
+  margin: 0;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700; }
+  to { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; }
+}
+
+#resetButton {
+  background: #FF4500; /* Red-Orange */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  margin-top: 10px;
+}
+
+#resetButton:hover {
+  background: #FF6347; /* Tomato */
+  transform: scale(1.05);
+}
+
+/* Budget Goal Tracker */
+.budget-goal {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.budget-goal h2 {
+  font-size: 1.5rem;
+  color: #FFD700; /* Gold */
+  margin-bottom: 10px;
+}
+
+.budget-goal input, .budget-goal button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 5px;
+}
+
+.budget-goal button {
+  background: #FFD700; /* Gold */
+  color: #0B3D91;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.budget-goal button:hover {
+  background: #FFA500; /* Orange */
+  transform: scale(1.05);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#progress {
+  height: 100%;
+  background: #FFD700; /* Gold */
+  width: 0;
+  transition: width 0.5s;
+}
+
+#goalStatus {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Expense Form */
+.expense-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.expense-form h2 {
+  font-size: 1.5rem;
+  color: #FFD700; /* Gold */
+  margin-bottom: 10px;
+}
+
+.expense-form input, .expense-form select, .expense-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.expense-form button {
+  background: #FFD700; /* Gold */
+  color: #0B3D91;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.expense-form button:hover {
+  background: #FFA500; /* Orange */
+  transform: scale(1.05);
+}
+
+/* Expense List */
+.expense-list {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.expense-list h2 {
+  font-size: 1.5rem;
+  color: #FFD700; /* Gold */
+  margin-bottom: 10px;
+}
+
+.expense-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.expense-list li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.expense-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.expense-list li button {
+  background: #FF4500; /* Red-Orange */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.expense-list li button:hover {
+  background: #FF6347; /* Tomato */
+}
+
+#exportCSV {
+  margin-top: 10px;
+  background: #36A2EB; /* Blue */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+#exportCSV:hover {
+  background: #4BC0C0; /* Teal */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .chart-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .content-container {
+    overflow-y: visible;
+  }
+
+  .title-container h1 {
+    font-size: 3rem;
+  }
+}
