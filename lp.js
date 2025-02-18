@@ -1,4 +1,4 @@
-// Navigation Buttons
+
 document.getElementById('currency-converter-btn').addEventListener('click', () => {
     window.location.href = 'currency.html'; // Replace with your Currency Converter HTML file name
   });
@@ -7,7 +7,7 @@ document.getElementById('currency-converter-btn').addEventListener('click', () =
     window.location.href = 'expense.html'; // Replace with your Expense Tracker HTML file name
   });
   
-  // Dark Mode Toggle
+
   const darkModeToggle = document.getElementById('dark-mode-toggle');
   const body = document.body;
   
