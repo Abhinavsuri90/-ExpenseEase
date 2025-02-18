@@ -1,4 +1,5 @@
-// DOM Elements
+// DOM ke saare elements
+
 const descriptionInput = document.getElementById('description');
 const amountInput = document.getElementById('amount');
 const categoryInput = document.getElementById('category');
@@ -15,7 +16,7 @@ const goalStatus = document.getElementById('goalStatus');
 const exportCSVButton = document.getElementById('exportCSV');
 const resetButton = document.getElementById('resetButton');
 
-// Initialize Pie Chart
+//PIe chart yaha se hai 
 let pieChart = new Chart(pieChartCanvas, {
   type: 'pie',
   data: {
@@ -43,7 +44,7 @@ let pieChart = new Chart(pieChartCanvas, {
   }
 });
 
-// Initialize Bar Chart
+// bar chart ki js yaha hai 
 let barChart = new Chart(barChartCanvas, {
   type: 'bar',
   data: {
@@ -77,11 +78,11 @@ let barChart = new Chart(barChartCanvas, {
   }
 });
 
-// Load expenses from localStorage
+// expense from local storage here 
 let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
 let budgetGoal = parseFloat(localStorage.getItem('budgetGoal')) || 0;
 
-// Render expenses
+// expense ko update karna ka function
 function renderExpenses() {
   expensesList.innerHTML = '';
   expenses.forEach((expense, index) => {
@@ -96,7 +97,7 @@ function renderExpenses() {
   updateBudgetGoalProgress();
 }
 
-// Add expense
+// Axpense ko ad karna 
 addExpenseButton.addEventListener('click', () => {
   const description = descriptionInput.value.trim();
   const amount = parseFloat(amountInput.value);
@@ -123,7 +124,7 @@ function deleteExpense(index) {
   renderExpenses();
 }
 
-// Update charts
+// funtion chart ko update karna ka
 function updateCharts() {
   const categories = {};
   expenses.forEach(expense => {
@@ -145,7 +146,7 @@ function updateCharts() {
   barChart.update();
 }
 
-// Set budget goal
+// budjet goial set karna ka feature
 setBudgetGoalButton.addEventListener('click', () => {
   const goal = parseFloat(budgetGoalInput.value);
   if (goal > 0) {
@@ -157,7 +158,7 @@ setBudgetGoalButton.addEventListener('click', () => {
   }
 });
 
-// Update budget goal progress
+// budjet goal ko update karna ka function 
 function updateBudgetGoalProgress() {
   const totalExpenses = expenses.reduce((total, expense) => total + expense.amount, 0);
   const progress = (totalExpenses / budgetGoal) * 100;
@@ -170,7 +171,7 @@ function updateBudgetGoalProgress() {
   }
 }
 
-// Export expenses as CSV
+// csv file 
 exportCSVButton.addEventListener('click', () => {
   const csvContent = "data:text/csv;charset=utf-8," +
     "Description,Amount,Category,Payment Method,Date\n" +
@@ -198,5 +199,5 @@ resetButton.addEventListener('click', () => {
   alert('All data has been reset.');
 });
 
-// Initial render
+
 renderExpenses();
